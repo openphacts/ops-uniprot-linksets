@@ -3,7 +3,7 @@ CONSTRUCT {
 	?uniprot_uri rdfs:seeAlso ?omim_uri
 } WHERE {
 	GRAPH <http://purl.uniprot.org> {
-		?uniprot_uri <http://semanticscience.org/resource/SIO_010043> ?omim_uri .
+		?uniprot_uri rdfs:seeAlso ?omim_uri .
 		?omim_uri uniprot:database <http://purl.uniprot.org/database/MIM> .
 	}
 }

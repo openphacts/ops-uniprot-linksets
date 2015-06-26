@@ -1,9 +1,11 @@
 PREFIX uniprot: <http://purl.uniprot.org/core/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
 CONSTRUCT {
 	?uniprot_uri rdfs:seeAlso ?flybase_uri
 } WHERE {
 	GRAPH <http://purl.uniprot.org> {
-		?uniprot_uri <http://semanticscience.org/resource/SIO_010043> ?flybase_uri .
+		?uniprot_uri rdfs:seeAlso ?flybase_uri .
 		?flybase_uri uniprot:database <http://purl.uniprot.org/database/FlyBase> .
 	}
 }

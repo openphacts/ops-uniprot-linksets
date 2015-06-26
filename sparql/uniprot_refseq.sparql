@@ -3,7 +3,7 @@ CONSTRUCT {
 	?uniprot_uri rdfs:seeAlso ?refseq_uri
 } WHERE {
 	GRAPH <http://purl.uniprot.org> {
-		?uniprot_uri <http://semanticscience.org/resource/SIO_010043> ?refseq_uri .
+		?uniprot_uri rdfs:seeAlso ?refseq_uri .
 		?refseq_uri uniprot:database <http://purl.uniprot.org/database/RefSeq> .
 	}
 }
