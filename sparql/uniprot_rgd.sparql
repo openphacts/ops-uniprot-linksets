@@ -1,0 +1,9 @@
+PREFIX uniprot: <http://purl.uniprot.org/core/>
+CONSTRUCT {
+	?uniprot_uri rdfs:seeAlso ?rgd_uri
+} WHERE {
+	GRAPH <http://purl.uniprot.org> {
+		?uniprot_uri <http://semanticscience.org/resource/SIO_010043> ?rgd_uri .
+		?rgd_uri uniprot:database <http://purl.uniprot.org/database/RGD> .
+	}
+}"
