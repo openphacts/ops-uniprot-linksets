@@ -7,4 +7,4 @@ CONSTRUCT {
 		?uniprot_uri rdfs:seeAlso ?sgd_uri .
 		?sgd_uri uniprot:database <http://purl.uniprot.org/database/SGD> .
 	}
-}"
+}
