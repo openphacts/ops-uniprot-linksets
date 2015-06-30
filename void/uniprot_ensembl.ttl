@@ -15,12 +15,12 @@
 <> a void:DatasetDescription ;
 	dcterms:title "Uniprot-Ensembl VoID Description"@en ;
 	dcterms:description "The VoID Description for a Uniprot-Ensembl linkset."@en ;
-	pav:createdBy <http://orcid.org/0000-0002-1303-2189> ;
+	pav:createdBy <http://orcid.org/0000-0001-9842-9718> ;
 	pav:contributedBy <http://orcid.org/0000-0002-1303-2189> ;
-	pav:createdOn "2015-06-26T14:30:00Z"^^xsd:dateTime ;
+	pav:createdOn "2015-06-30T13:37:00Z"^^xsd:dateTime ;
 	foaf:primaryTopic :Uniprot-Ensembl .
 
-<https://raw.github.com/openphacts/ops-platform-setup/master/void/uniprot/uniprot_2013_05_void.ttl#uniprotkb_rdf> void:subset :Uniprot-Ensembl .
+<https://cdn.rawgit.com/openphacts/ops-platform-setup/1.5.0/void/uniprot_2015_01_void.ttl#uniprotkb_rdf> void:subset :Uniprot-Ensembl .
 
 :Uniprot-Ensembl a void:Linkset ;
 	void:linkPredicate rdfs:seeAlso ;
@@ -31,11 +31,12 @@
 	pav:contributedBy <http://orcid.org/0000-0002-1303-2189> ;
   pav:previousVersion <http://data.openphacts.org/1.5/ims/linksets/uniprot/uniprot_ensembl.ttl#Uniprot-Ensembl> ;
 	pav:createdOn "2015-06-26T14:32:00Z"^^xsd:dateTime ;
-	dul:expresses <http://semanticscience.org/resource/SIO_000985> ; #Protein coding gene
-	pav:version "2015_01"; 
+	pav:version "2015_01";
 	pav:retrievedBy <http://orcid.org/0000-0001-9842-9718> ;
+
+	dul:expresses <http://semanticscience.org/resource/SIO_000985> ; #Protein coding gene
 	pav:createdWith :uniprot-ensembl-query ;
-	void:subjectsTarget <https://raw.githubusercontent.com/openphacts/ops-platform-setup/1.5.0/void/uniprot_2015_01_void.ttl#uniprotkb_rdf> ;
+	void:subjectsTarget <https://cdn.rawgit.com/openphacts/ops-platform-setup/1.5.0/void/uniprot_2015_01_void.ttl#uniprotkb_rdf> ;
 	void:objectsTarget :Ensembl ;
 	void:triples "84530"^^xsd:integer .
 
@@ -53,7 +54,6 @@ CONSTRUCT {
 	dcterms:license <http://www.apache.org/licenses/LICENSE-2.0> .
 
 :Ensembl a dctypes:Dataset ;
-	dcterms:title "Ensembl" ; 
+	dcterms:title "Ensembl" ;
 	dcterms:description "References to the Ensembl dataset from Uniprot" ;
 	void:uriSpace "http://purl.uniprot.org/ensembl/" .
-
