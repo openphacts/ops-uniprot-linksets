@@ -38,15 +38,18 @@
 	void:triples "118037"^^xsd:integer .
 
 :uniprot-pdb-query dcterms:title "UniProt PDB linkset generation SPARQL query" ;
-	dcterms:description """PREFIX uniprot: <http://purl.uniprot.org/core/>
+	dcterms:description """
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX uniprot: <http://purl.uniprot.org/core/>
 CONSTRUCT {
 	?uniprot_uri rdfs:seeAlso ?pdb_uri
 } WHERE {
 	GRAPH <http://purl.uniprot.org> {
-		?uniprot_uri <http://semanticscience.org/resource/SIO_010043> ?pdb_uri .
+		?uniprot_uri rdfs:seeAlso ?pdb_uri .
 		?pdb_uri uniprot:database <http://purl.uniprot.org/database/PDB> .
 	}
-}""";
+}
+""";
 	dcterms:license <http://www.apache.org/licenses/LICENSE-2.0> .
 
 :PDB a dctypes:Dataset ;

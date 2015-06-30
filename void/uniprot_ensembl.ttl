@@ -40,8 +40,9 @@
 	void:triples "84530"^^xsd:integer .
 
 :uniprot-ensembl-query dcterms:title "UniProt Ensembl linkset generation SPARQL query" ;
-	dcterms:description """PREFIX uniprot: <http://purl.uniprot.org/core/>
+	dcterms:description """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX uniprot: <http://purl.uniprot.org/core/>
 CONSTRUCT {
 	?uniprot_uri rdfs:seeAlso ?ensembl_uri
 } WHERE {
@@ -49,7 +50,8 @@ CONSTRUCT {
 		?uniprot_uri rdfs:seeAlso ?ensembl_uri .
 		?ensembl_uri uniprot:database <http://purl.uniprot.org/database/Ensembl> .
     }
-}""";
+}
+""";
 	dcterms:license <http://www.apache.org/licenses/LICENSE-2.0> .
 
 :Ensembl a dctypes:Dataset ;

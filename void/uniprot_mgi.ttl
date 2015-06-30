@@ -42,13 +42,16 @@
 	void:uriSpace "http://purl.uniprot.org/mgi/" .
 
 :uniprot-mgi-query dcterms:title "UniProt MGI linkset generation SPARQL query" ;
-	dcterms:description """PREFIX uniprot: <http://purl.uniprot.org/core/>
+	dcterms:description """
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX uniprot: <http://purl.uniprot.org/core/>
 CONSTRUCT {
 	?uniprot_uri rdfs:seeAlso ?mgi_uri
 } WHERE {
 	GRAPH <http://purl.uniprot.org> {
-		?uniprot_uri <http://semanticscience.org/resource/SIO_010043> ?mgi_uri .
+		?uniprot_uri rdfs:seeAlso ?mgi_uri .
 		?mgi_uri uniprot:database <http://purl.uniprot.org/database/MGI> .
 	}
-}""";
+}
+""";
 	dcterms:license <http://www.apache.org/licenses/LICENSE-2.0> .

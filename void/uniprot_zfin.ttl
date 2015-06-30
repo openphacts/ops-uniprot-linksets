@@ -38,15 +38,18 @@
 	void:triples "2774"^^xsd:integer .
 
 :uniprot-zfin-query dcterms:title "UniProt ZFIN linkset generation SPARQL query" ;
-	dcterms:description """PREFIX uniprot: <http://purl.uniprot.org/core/>
+	dcterms:description """
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX uniprot: <http://purl.uniprot.org/core/>
 CONSTRUCT {
 	?uniprot_uri rdfs:seeAlso ?zfin_uri
 } WHERE {
 	GRAPH <http://purl.uniprot.org> {
-		?uniprot_uri <http://semanticscience.org/resource/SIO_010043> ?zfin_uri .
+		?uniprot_uri rdfs:seeAlso ?zfin_uri .
 		?zfin_uri uniprot:database <http://purl.uniprot.org/database/ZFIN> .
 	}
-}""";
+}
+""";
 	dcterms:license <http://www.apache.org/licenses/LICENSE-2.0> .
 
 :ZFIN a dctypes:Dataset ;
