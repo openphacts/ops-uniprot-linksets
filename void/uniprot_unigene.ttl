@@ -35,7 +35,7 @@
 	pav:createdWith :uniprot-unigene-query, <http://ops2.few.vu.nl:8890/sparql> ;
 	void:subjectsTarget <https://cdn.rawgit.com/openphacts/ops-platform-setup/1.5.0/void/uniprot_2015_01_void.ttl#uniprotkb_rdf> ;
 	void:objectsTarget :UniGene ;
-	void:triples "83759"^^xsd:integer .
+	void:triples "102836"^^xsd:integer .
 
 :uniprot-unigene-query dcterms:title "UniProt UniGene linkset generation SPARQL query" ;
 	dcterms:description """PREFIX uniprot: <http://purl.uniprot.org/core/>

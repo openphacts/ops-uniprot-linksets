@@ -35,7 +35,7 @@
 	pav:createdWith :uniprot-refseq-query, <http://ops2.few.vu.nl:8890/sparql> ;
 	void:subjectsTarget <https://cdn.rawgit.com/openphacts/ops-platform-setup/1.5.0/void/uniprot_2015_01_void.ttl#uniprotkb_rdf> ;
 	void:objectsTarget :RefSeq ;
-	void:triples "527685"^^xsd:integer .
+	void:triples "650265"^^xsd:integer .
 
 :RefSeq a dctypes:Dataset ;
 	dcterms:title "RefSeq" ;

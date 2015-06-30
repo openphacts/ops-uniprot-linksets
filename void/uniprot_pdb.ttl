@@ -35,7 +35,7 @@
 	pav:createdWith :uniprot-pdb-query, <http://ops2.few.vu.nl:8890/sparql> ;
 	void:subjectsTarget <https://cdn.rawgit.com/openphacts/ops-platform-setup/1.5.0/void/uniprot_2015_01_void.ttl#uniprotkb_rdf> ;
 	void:objectsTarget :PDB ;
-	void:triples "93931"^^xsd:integer .
+	void:triples "118037"^^xsd:integer .
 
 :uniprot-pdb-query dcterms:title "UniProt PDB linkset generation SPARQL query" ;
 	dcterms:description """PREFIX uniprot: <http://purl.uniprot.org/core/>
