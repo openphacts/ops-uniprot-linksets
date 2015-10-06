@@ -23,8 +23,9 @@ public class TestUniprot {
 
 	@Test
 	public void wormbaseSeeAlso() throws Exception {
-		URL wormbase = getClass().getResource("/data/ops-uniprot-linksets/uniprot_wormbase.ttl.gz");
-		assertNotNull(wormbase);
+		String filename = "/data/ops-uniprot-linksets/uniprot_wormbase.ttl.gz";
+		URL wormbase = getClass().getResource(filename);
+		assertNotNull("Can't find " + filename);
 		
 		try (InputStream in = new GZIPInputStream(wormbase.openStream())) {
 			RDFDataMgr.read(model, in, wormbase.toExternalForm(), Lang.TURTLE);
