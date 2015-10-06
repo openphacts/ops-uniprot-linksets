@@ -34,7 +34,7 @@
 			<plugin>
 				<groupId>no.s11.dataplugin</groupId>
 				<artifactId>data-maven-plugin</artifactId>
-				<version>0.0.4-SNAPSHOT</version>
+				<version>0.0.5-SNAPSHOT</version>
 				<extensions>true</extensions>
 			</plugin>
 			

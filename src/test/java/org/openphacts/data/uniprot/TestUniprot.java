@@ -33,5 +33,6 @@ public class TestUniprot {
 		
 		assertTrue(wormbase + " should contain rdfs:seeAlso statements", 
 				model.contains((Resource)null, seeAlso, (RDFNode)null));
+		
 	}
 }
