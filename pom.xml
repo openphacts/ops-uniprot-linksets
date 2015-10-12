@@ -5,12 +5,12 @@
 	<groupId>org.openphacts.data</groupId>
 	<artifactId>ops-uniprot-linksets</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>data</packaging>
+	<packaging>pom</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>	
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -19,7 +19,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
-		</dependency>	
+		</dependency>
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>apache-jena</artifactId>
@@ -30,12 +30,59 @@
 	</dependencies>
 
 	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
 		<plugins>
 			<plugin>
-				<groupId>no.s11.dataplugin</groupId>
-				<artifactId>data-maven-plugin</artifactId>
-				<version>0.0.6-SNAPSHOT</version>
-				<extensions>true</extensions>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<executions>
+					<execution>
+						<!-- In case we are running in a <packaging>pom</packaging> -->
+						<id>data-test-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>data-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- TODO: descriptorRef from own JAR? -->
+					<descriptors>
+						<descriptor>src/assembly/data-package.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.18.1</version>
+				<executions>
+					<execution>
+						<id>data-test</id>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<additionalClasspathElements>
+						<additionalClasspathElement>${project.build.directory}/${project.build.finalName}-data.zip</additionalClasspathElement>
+					</additionalClasspathElements>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

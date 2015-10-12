@@ -1,7 +1,8 @@
 
 package org.openphacts.data.uniprot;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -16,7 +17,7 @@ import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.junit.Test;
 
-public class TestUniprot {
+public class UniprotIT {
 
 	Model model = ModelFactory.createDefaultModel();
 	Property seeAlso = model.createProperty("http://www.w3.org/2000/01/rdf-schema#seeAlso");
